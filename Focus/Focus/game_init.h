@@ -59,6 +59,7 @@ typedef struct square {
 
     //number of pieces on the square
     int num_pieces;
+    color color22;
     struct square *next;
 }square;
 
@@ -69,6 +70,10 @@ void initialize_players(player players[PLAYERS_NUM]);
 void initialize_board(square board[BOARD_SIZE][BOARD_SIZE]);
 
 
+struct square *push1(struct square *head, int value,color x);
 
+struct square * pop(struct square *head);
+
+int getCount(struct square* head);
 
 

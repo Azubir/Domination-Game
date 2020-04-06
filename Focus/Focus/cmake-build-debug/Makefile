@@ -122,6 +122,33 @@ Focus/fast:
 	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/build
 .PHONY : Focus/fast
 
+PlayGame.obj: PlayGame.c.obj
+
+.PHONY : PlayGame.obj
+
+# target to build an object file
+PlayGame.c.obj:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/PlayGame.c.obj
+.PHONY : PlayGame.c.obj
+
+PlayGame.i: PlayGame.c.i
+
+.PHONY : PlayGame.i
+
+# target to preprocess a source file
+PlayGame.c.i:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/PlayGame.c.i
+.PHONY : PlayGame.c.i
+
+PlayGame.s: PlayGame.c.s
+
+.PHONY : PlayGame.s
+
+# target to generate assembly for a file
+PlayGame.c.s:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/PlayGame.c.s
+.PHONY : PlayGame.c.s
+
 game_init.obj: game_init.c.obj
 
 .PHONY : game_init.obj
@@ -212,6 +239,9 @@ help:
 	@echo ... Focus
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... PlayGame.obj
+	@echo ... PlayGame.i
+	@echo ... PlayGame.s
 	@echo ... game_init.obj
 	@echo ... game_init.i
 	@echo ... game_init.s

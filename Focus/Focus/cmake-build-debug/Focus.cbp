@@ -74,6 +74,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Focus/Focus/PlayGame.c">
+			<Option target="Focus"/>
+		</Unit>
+		<Unit filename="C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Focus/Focus/PlayGame.h">
+			<Option target="Focus"/>
+		</Unit>
 		<Unit filename="C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Focus/Focus/game_init.c">
 			<Option target="Focus"/>
 		</Unit>

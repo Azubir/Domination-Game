@@ -79,3 +79,32 @@ void initialize_board(square board [BOARD_SIZE][BOARD_SIZE]){//initialises the b
 
 }
 
+struct square *push1(struct square *head, int value,color x){
+    square *curr =head;
+    head  = malloc( sizeof( square ) );
+    head->num_pieces=value;
+    head->color22=x;
+    head->next= curr;
+
+    return head;
+}
+
+struct square * pop(struct square *head){
+    struct square *curr = head;
+    if(curr!=NULL){
+        head = curr->next;
+        //printf("/nStack Data: %d,,%d\n", curr->num_pieces,curr->color22);
+        free(curr);
+    }
+    return head;
+}
+
+int getCount(struct square* head)
+{
+    // Base case
+    if (head == NULL)
+        return 0;
+
+    // count is 1 + count of remaining list
+    return 1 + getCount(head->next);
+}
