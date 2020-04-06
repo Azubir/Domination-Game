@@ -81,3 +81,25 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+
+HEAD[2][5]=push1(HEAD[2][5],2,GREEN);
+HEAD[2][5]=  push1(HEAD[2][5], 3,RED);
+HEAD[2][5]=  push1(HEAD[2][5], 5,RED);
+printf("\n try 1: %d", HEAD[2][5]->num_pieces);
+board[2][5].num_pieces=HEAD[2][5]->num_pieces;
+board[2][5].color22=HEAD[2][5]->color22;
+printf("\n Updated array: %d,,%d\n", board[2][5].num_pieces,board[2][5].color22);
+struct square *temp=HEAD[2][5];
+HEAD[2][5]=pop(HEAD[2][5]);
+HEAD[2][5]=pop(HEAD[2][5]);
+HEAD[2][5]=pop(HEAD[2][5]);
+while(temp!=NULL){
+printf("%d-> ",temp->num_pieces);
+temp=temp->next;
+}
+temp=HEAD[2][5];
+printf("\n");
+while(temp!=NULL){
+printf("%d-> ",temp->color22);
+temp=temp->next;
+}
