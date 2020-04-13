@@ -14,7 +14,7 @@ void getting(struct square *HEAD[BOARD_SIZE][BOARD_SIZE],square board[BOARD_SIZE
     }
 }
 void Play(struct square *HEAD[BOARD_SIZE][BOARD_SIZE],square board[BOARD_SIZE][BOARD_SIZE],player players[PLAYERS_NUM]){
-    for(int i=2; i<5;i++) {
+    for(int i=2; i<15;i++) {
         int r, c, r2, c2;
         if (i % 2 == 0) {
             printf("%s turn(RED)\n", players[0].name);
@@ -27,15 +27,42 @@ void Play(struct square *HEAD[BOARD_SIZE][BOARD_SIZE],square board[BOARD_SIZE][B
                 scanf("%d", &r2);
                 printf("Enter the column where you want to place the stack :  \n");
                 scanf("%d", &c2);
-                if (getCount(HEAD[r][c]) < 6) {
-                    HEAD[r2][c2]=push1(HEAD[r2][c2], HEAD[r][c]->num_pieces, HEAD[r][c]->color22);
+
+                     HEAD[r2][c2]=mergestack(HEAD[r][c],HEAD[r2][c2]);
                     HEAD[r][c]=pop(HEAD[r][c]);
                     board[r2][c2].stack->p_color=HEAD[r2][c2]->color22;
-                    print_board2(board,HEAD);
-                }
+                    if(getCount(HEAD[r2][c2])<6) {
+                        print_board2(board, HEAD);
+                        printf("%s has %d of his own pieces reserved.\nand has %d of the enemys pieces captured\n",players[0].name,players[0].own_pieces_stock,players[0].own_pieces_stock);
+                    }
+                    else{
+                         while(getCount(HEAD[r2][c2])>5){
+                           struct square *curr,*pre;
+                           curr=HEAD[r2][c2];
+                           pre=HEAD[r2][c2];
+                           while(curr->next!=NULL){
+                               pre=curr;
+                               curr=curr->next;
+                           }
+                           if(HEAD[r2][c2]->color22==GREEN){
+                               players[0].captured_pieces++;
+                               pre->next=NULL;
+                               free(curr);
+                           }
+                           else{
+                               players[0].own_pieces_stock++;
+                               pre->next=NULL;
+                               free(curr);
+                           }
+
+                         }
+                        print_board2(board, HEAD);
+                        printf("%s has %d of his own pieces reserved.\nand has %d of the enemys pieces captured\n",players[0].name,players[0].own_pieces_stock,players[0].own_pieces_stock);
+                    }
+
             }
             else{
-                printf("Either you tried to move an invalid piece or you chose a top color thats not yours!!!\n");
+                printf("Either you tried to move an invalid piece or you chose a top color that is not yours!!!\n");
             }
         }
         else{
@@ -49,15 +76,41 @@ void Play(struct square *HEAD[BOARD_SIZE][BOARD_SIZE],square board[BOARD_SIZE][B
                 scanf("%d", &r2);
                 printf("Enter the column where you want to place the stack :  \n");
                 scanf("%d", &c2);
-                if (getCount(HEAD[r][c]) < 6) {
-                    HEAD[r2][c2]=push1(HEAD[r2][c2], HEAD[r][c]->num_pieces, HEAD[r][c]->color22);
+                   HEAD[r2][c2]=mergestack(HEAD[r][c],HEAD[r2][c2]);
                     HEAD[r][c]=pop(HEAD[r][c]);
                     board[r2][c2].stack->p_color=HEAD[r2][c2]->color22;
-                    print_board2(board,HEAD);
+
+                if(getCount(HEAD[r2][c2])<6) {
+                    print_board2(board, HEAD);
+                    printf("%s has %d of his own pieces reserved.\nand has %d of the enemys pieces captured\n",players[1].name,players[1].own_pieces_stock,players[1].own_pieces_stock);
+                }
+
+                else{
+                    while(getCount(HEAD[r2][c2])>5){
+                        struct square *curr,*pre;
+                        curr=HEAD[r2][c2];
+                        pre=HEAD[r2][c2];
+                        while(curr->next!=NULL){
+                            pre=curr;
+                            curr=curr->next;
+                        }
+                        if(HEAD[r2][c2]->color22==GREEN){
+                            players[0].captured_pieces++;
+                            pre->next=NULL;
+                            free(curr);
+                        }
+                        else{
+                            players[0].own_pieces_stock++;
+                            pre->next=NULL;
+                            free(curr);
+                        }
+                    }
+                    print_board2(board, HEAD);
+                    printf("%s has %d of his own pieces reserved.\nand has %d of the enemys pieces captured\n",players[1].name,players[1].own_pieces_stock,players[1].own_pieces_stock);
                 }
             }
             else{
-                printf("Either you tried to move an invalid piece or you chose a top color thats not yours!!!\n");
+                printf("Either you tried to move an invalid piece or you chose a top color that is not yours!!!\n");
             }
         }
     }

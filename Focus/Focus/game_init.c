@@ -3,9 +3,9 @@
 #include "game_init.h"
 
 void initialize_players(player players[PLAYERS_NUM]){
-players[0].player_color=RED,players[0].captured_pieces=0,players[0].own_pieces_remaining=20;
-//players[0].name[10] = "Playerone";
-players[1].player_color=GREEN, /*players[1].name[10]= "Playertwo",*/ players[1].captured_pieces=0, players[1].own_pieces_remaining=20;
+players[0].player_color=RED,players[0].captured_pieces=0,players[0].own_pieces_stock=0;
+
+players[1].player_color=GREEN, players[1].captured_pieces=0, players[1].own_pieces_stock=0;
 
     // implement here the functionality to initialize the players
 printf("\nEnter name of first player:\n");
@@ -90,12 +90,13 @@ struct square *push1(struct square *head, int value,color x){
 }
 
 struct square * pop(struct square *head){
-    struct square *curr = head;
-    if(curr!=NULL){
-        head = curr->next;
-        //printf("/nStack Data: %d,,%d\n", curr->num_pieces,curr->color22);
+    struct square *curr;
+    while(head!=NULL){
+        curr=head;
+        head=head->next;
         free(curr);
     }
+    head=NULL;
     return head;
 }
 
@@ -108,3 +109,14 @@ int getCount(struct square* head)
     // count is 1 + count of remaining list
     return 1 + getCount(head->next);
 }
+
+struct square * mergestack(struct square *head1,struct square *head2){
+    struct square *curr=head1;
+    while(curr->next!=NULL){
+        curr=curr->next;//in order to reach the last node of the stack
+    }
+
+    curr->next=head2;
+    return head1;
+}
+

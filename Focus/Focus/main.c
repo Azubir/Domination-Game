@@ -10,8 +10,9 @@ int main() {
 
     initialize_players(players);
 
-    initialize_board(board);
 
+    initialize_board(board);
+    print_board3(board);
     print_board(board);
 
     square *HEAD[BOARD_SIZE][BOARD_SIZE] = { NULL };

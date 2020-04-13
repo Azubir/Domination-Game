@@ -28,7 +28,7 @@ typedef struct player{
     color player_color;
     char name[10];
     int captured_pieces;
-    int own_pieces_remaining;
+    int own_pieces_stock;
     /*
      * A player should also be characterized by:
      * name,
@@ -76,4 +76,4 @@ struct square * pop(struct square *head);
 
 int getCount(struct square* head);
 
-
+struct square * mergestack(struct square *head1,struct square *head2);
