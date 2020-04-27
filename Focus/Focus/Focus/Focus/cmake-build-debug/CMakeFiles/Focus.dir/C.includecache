@@ -1,0 +1,54 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/CheckWinner.c
+stdio.h
+-
+stdlib.h
+-
+CheckWinner.h
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/CheckWinner.h
+
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/CheckWinner.h
+input_output.h
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/input_output.h
+
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/CheckingValidity.h
+
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/PlayGame.c
+stdio.h
+-
+stdlib.h
+-
+PlayGame.h
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/PlayGame.h
+
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/PlayGame.h
+CheckWinner.h
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/CheckWinner.h
+CheckingValidity.h
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/CheckingValidity.h
+
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/game_init.h
+
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/input_output.c
+stdio.h
+-
+input_output.h
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/input_output.h
+
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/input_output.h
+game_init.h
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/game_init.h
+
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/main.c
+stdio.h
+-
+PlayGame.h
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/PlayGame.h
+

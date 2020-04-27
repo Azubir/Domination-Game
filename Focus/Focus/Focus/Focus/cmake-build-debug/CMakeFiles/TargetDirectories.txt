@@ -1,0 +1,3 @@
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/cmake-build-debug/CMakeFiles/Focus.dir
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/azubi/Documents/First Year/Semester 2/Software Engineering project/Project 2/Focus/Focus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
