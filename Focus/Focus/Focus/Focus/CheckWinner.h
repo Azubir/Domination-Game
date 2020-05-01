@@ -8,4 +8,4 @@
 #endif //FOCUS_CHECKWINNER_H
 
 #include "input_output.h"
-int checkwinner(square board [BOARD_SIZE][BOARD_SIZE],struct square *head[BOARD_SIZE][BOARD_SIZE]);
+int checkwinner(square board [BOARD_SIZE][BOARD_SIZE],struct square *head[BOARD_SIZE][BOARD_SIZE],player players[PLAYERS_NUM]);
