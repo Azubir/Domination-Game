@@ -25,3 +25,24 @@ int checkwinner(square board[BOARD_SIZE][BOARD_SIZE], struct square * HEAD[BOARD
             }
         }
     }
+
+
+
+
+
+
+
+
+
+    if(green==0){
+        printf("%s WINS\nCOLOUR: RED\nCAPTURED PIECES(ENEMYS): %d\nRESERVED PIECES: %d",players[0].name,players[0].captured_pieces,players[0].own_pieces_stock);
+        return 0;
+    }else if(red==0){
+        printf("GREEN WINS");
+        printf("%s WINS\nCOLOUR: GREEN\nCAPTURED PIECES(ENEMYS): %d\nRESERVED PIECES: %d",players[1].name,players[1].captured_pieces,players[1].own_pieces_stock);
+        return 0;
+    }else{
+        return 1;
+    }
+
+}
