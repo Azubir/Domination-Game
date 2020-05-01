@@ -223,7 +223,10 @@ void Play(struct square *HEAD[BOARD_SIZE][BOARD_SIZE],square board[BOARD_SIZE][B
                 printf("%s has %d of his own pieces reserved.\nand has %d of the enemys pieces captured\n",
                        players[1].name,players[1].own_pieces_stock, players[1].captured_pieces);//prints out the second player name,pieces he has reserved,pieces he has captured
             }
-           // flag=checkwinner(board,HEAD);
+           winner=checkwinner(board,HEAD,players);
+            if(winner==0){
+                break;
+            }
         }
 }
 
