@@ -14,7 +14,7 @@ void getting(struct square *HEAD[BOARD_SIZE][BOARD_SIZE],square board[BOARD_SIZE
     }
 }
 void Play(struct square *HEAD[BOARD_SIZE][BOARD_SIZE],square board[BOARD_SIZE][BOARD_SIZE],player players[PLAYERS_NUM]) {//function to play the game
-    int g,flag=2;//initialising variables which will ne used to operate the game
+    int g,flag=2,winner;//initialising variables which will ne used to operate the game
         for (int i = 2; i < 105; i++) {//a loop which will allow the the game to be played i amount of times
             int r, c, r2, c2, k,l=i%2;//initialising variables which will ne used to operate the game
             printf("(%s turn) Enter 0 if you want to move piece from the board or enter 1 if you want to move piece from pieces that you have reserved or\n Enter 2 if you want to display %s captured and reserved pieces or\n Enter 3 if you want to display %s captured and reserved pieces\n",
